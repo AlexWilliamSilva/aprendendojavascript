@@ -19,13 +19,14 @@
             precoprod = Number(prompt("Quanto custa o " + produto + " que você está comprando?"));
             valorpago = Number(prompt("Qual foi o valor que você deu para pagar " + produto + "?"));
 
-            if (valorpago > precoprod) {
-                troco = valorpago - precoprod;
+            if (valorpago > precoprod) { // uso de desvio condicional para fazer o calculo de troco
+                troco = valorpago - precoprod; // aonde caso o valor pago seja maior que o preco do produto ele ira calcular o valor pago menos o preço do produto
             } else {
-                troco = precoprod - valorpago;
+                troco = precoprod - valorpago; // e se o valor do produto for maior que o valor pago sera feita a conta inversa a anterior
             }
     
             alert("Você comprou " + produto + " que custou R$ " + precoprod + ",00.\nDeu R$ " + valorpago + ",00 em dinheiro e vai receber R$ " + troco + ",00 de troco.\nVolte sempre!");
+            // concatenação das variaveis com um texto informativo
         }
     </script>
 </body>
