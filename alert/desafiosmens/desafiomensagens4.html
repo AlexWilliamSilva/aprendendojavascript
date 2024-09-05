@@ -11,14 +11,21 @@
     <button onclick="produto()">Comprar produto</button>
 
     <script>
-        var produto, preco, valor;
+        var produto, precoprod, valorpago;
 
         function produto() {
+            
             produto = prompt("Que produto você está comprando?");
-            preco = Number(prompt("Quanto custa o " + produto + " que você está comprando?"));
-            valor = Number(prompt("Qual foi o valor que você deu para pagar " + produto + "?"));
-            troco = valor - preco;
-            alert("Você comprou " + produto + " que custou R$ " + preco + ",00.\nDeu R$ " + valor + ",00 em dinheiro e vai receber R$ " + troco + ",00 de troco.\nVolte sempre!");
+            precoprod = Number(prompt("Quanto custa o " + produto + " que você está comprando?"));
+            valorpago = Number(prompt("Qual foi o valor que você deu para pagar " + produto + "?"));
+
+            if (valorpago > precoprod) {
+                troco = valorpago - precoprod;
+            } else {
+                troco = precoprod - valorpago;
+            }
+    
+            alert("Você comprou " + produto + " que custou R$ " + precoprod + ",00.\nDeu R$ " + valorpago + ",00 em dinheiro e vai receber R$ " + troco + ",00 de troco.\nVolte sempre!");
         }
     </script>
 </body>
