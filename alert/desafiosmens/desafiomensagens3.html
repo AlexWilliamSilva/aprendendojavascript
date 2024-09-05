@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+
+    <button onclick="numerointeiro()">Antecessor e Sucessor</button>
+
+    <script>
+        var numero, numeromenor, numeromaior;
+
+        function numerointeiro() {
+            numero = Number(prompt("Digite um numero qualquer: "));
+            numeromenor = Number(numero - 1); // variavel que armazena o numero dado por - 1 ou pode usar o cod numeromenor = numero --
+            numeromaior = Number(numero + 1); // variavel que armazena o numero dado por + 1 ou pode usar o cod numeromaior = numero ++
+            alert("Antes de " + numero + ", temos o número " + numeromenor + ".\nDepois de " + numero + ", temos o número " + numeromaior + "."); // concastenação com /n para a quebra de linha
+        }
+    </script>
+</body>
+</html>

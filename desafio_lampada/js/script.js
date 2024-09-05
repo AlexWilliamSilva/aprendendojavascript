@@ -6,21 +6,23 @@ function acendendolampada(){ // função para a troca de imagem
     }
 }
 
-function lampadaApagada(){ // função para a troca de imagem
+function lampadaApagada() { // função para a troca de imagem
     if (!lampadaQuebrada) {  // nega o falso atribuido na variavel, forçando a troca de imagem
         lampadas.src = 'multimidia/lampada-apagada.jpg'; // imagem da lampada apagada
     }
 }
 
-function lampadaQuebrad(){ // função para a troca de imagem
+function lampadaQuebrad() { // função para a troca de imagem
     lampadaQuebrada = true; // passando o valor para verdadeiro, aonde sera o ponto de inicio para a quebra permanente
     lampadas.src = 'multimidia/lampada-quebrada.jpg'; // imagem da lampada quebrada
 }
 
 lampadas.addEventListener('mouseover', acendendolampada); // acende a lampada após o mouse ser posicionado na imagem
+
 lampadas.addEventListener('mouseout', lampadaApagada); // desliga após o mouse sair de cima da imagem
+
 lampadas.addEventListener('click', lampadaQuebrad); // quebra apos ser efetuado um click na imagem
-//tambem pode ser trocado por 'dbclick' = double click
+//tambem pode ser trocado por 'dblclick' = double click
 
 
 // ANOTAÇÔES ADICIONAIS
@@ -30,9 +32,11 @@ mudada por outro decorrente nos codigos abaixo */
 
 // 2 - 'mouseout' pode tambem ser 'mouseleave' que mantem o mesmo funcionamento citado anteriormente
 
-// 3 - 'click' tambem pode ser trocado por 'dbclick' = double click, onde precisara ser efetuado dois clicks na imagem
+// 3 - 'click' tambem pode ser trocado por 'dblclick' = double click, onde precisara ser efetuado dois clicks na imagem
 
-// 4 - se usado o codigo "const exemplo = document.getElementById('???');":
+// 4 - 'mouseover' tambem pode ser trocado para 'mouseenter'
+
+// 5 - se usado o codigo "const exemplo = document.getElementById('???');":
                                         // Significados 
     
     /* "const" = const é um tipo de variavel fixa, aonde uma vez atribuida com um valor não pode ser mudada por outro decorrente nos 
