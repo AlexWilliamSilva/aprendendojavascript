@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+
+    <button onclick="desconto()">Desconto de 10%</button>
+
+    <p id="mensagemtitle"></p>
+    <p id="precoorignal"></p>
+    <p id="valordesconto"></p>
+    <p id="totalpago"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+    <script>
+        var prod, precoprod, total, desconto;
+        function desconto() {
+            prod = prompt("Qual é o produto que você está comprando?");
+
+            precoprod = Number(prompt("Qual é o preço de " + prod + "?"));
+
+            desconto = precoprod * 0.10;
+
+            total = precoprod - desconto;
+
+            document.getElementById("mensagemtitle").innerHTML = `Calculando desconto de 10% para ${prod}`;
+            document.getElementById("precoorignal").innerHTML = `O preço original era R$ ${precoprod}.`;
+            document.getElementById("valordesconto").innerHTML = `Você acaba de ganhar R$ ${desconto} de desconto (-10%).`;
+            document.getElementById("totalpago").innerHTML = `No fim, você vai pagar R$ ${total} no produto ${prod}`;
+        }
+    </script>
+</body>
+</html>

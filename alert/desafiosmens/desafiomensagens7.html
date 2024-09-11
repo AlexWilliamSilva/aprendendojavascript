@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+
+    <button onclick="conversordolar()">Converter</button>
+    <p id="resultado"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+    <script>
+        var valordolar, valorcarteira, resultado;
+        valordolar = Number(prompt("Antes de mais nada. Quanto está a cotação do dólar agora?"));
+
+        function conversordolar() {
+            valorcarteira = Number(prompt("Quantos R$ você tem na carteira?"));
+
+            resultado = valorcarteira / valordolar;
+
+            document.getElementById("resultado").innerHTML = `A quantidade em dólar que será possível ser comprado é: ${resultado} US$`;
+        }
+    </script>
+</body>
+</html>

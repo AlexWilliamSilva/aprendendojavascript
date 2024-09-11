@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="temperatura()">Converter</button>
+
+    <p id="celsius"></p>
+
+    <p id="F_and_K"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+    <script>
+        function temperatura() {
+            var c, k, f;
+
+            c = Number(prompt("Digite uma temperatura em °C (Celsius)"));
+
+            k = c + 273,15;
+            f = (c * 1.8) + 32;
+
+            document.getElementById("celsius").innerHTML = `<h2>A temperatura de ${c} °C, corresponde a...</h2>`;
+            document.getElementById("F_and_K").innerHTML = 
+            `<p> 
+                ${k}°K (Kelvin) <br>
+                ${f}°F (Fahrenheit) <br>
+            </p>`
+        }
+    </script>
+</body>
+</html>

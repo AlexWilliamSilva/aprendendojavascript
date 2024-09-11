@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <button onclick="medidas()">Converter</button>
+    
+    <p id="trocademensagem"></p>
+
+    <p id="valoresdasmedidas"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+    <script>
+        var km, hm, dam, dm, cm, mm, medidaprov;
+
+        function medidas() {
+ 
+            medidaprov = prompt("Digite uma distância em metros(m)");
+
+            km = medidaprov / 1000;
+            hm = medidaprov / 100;
+            dam = medidaprov / 10;
+            dm = medidaprov * 10;
+            cm = medidaprov * 100;
+            mm = medidaprov * 1000;
+
+            document.getElementById("trocademensagem").innerHTML = `<h2>A distância de ${medidaprov} metros, corresponde a...</h2>`;
+            document.getElementById("valoresdasmedidas").innerHTML = `
+            <p>
+                ${km} quilômetros (Km) <br>
+                ${hm} hectcômetro (Hm) <br>
+                ${dam} decâmetros (Dam) <br>
+                ${dm} decímetros (dm) <br>
+                ${cm} centímetros (cm) <br>
+                ${mm} mílimetros (mm) <br>
+            </p>`;
+
+        }
+    </script>
+</body>
+</html>
