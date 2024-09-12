@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio_mensagens</title>
+    <title>     </title>
 </head>
 <body>
     <h1>Reajuste salarial</h1>
 
-    <button onclick="reajustesal">Reajustar Salário</button>
+    <button onclick="reajustesal()">Reajustar Salário</button>
+
+    <p id="mensagemtitle"></p>
+    <p id="ganhoatual"></p>
+    <p id="aumentoporcent"></p>
+    <p id="ganhoaposaumento"></p>
 
     <p>Clique no botão acima para iniciar.</p>
 
     <script>
-        var nomefunc, salario, porcent, sal_atual;
+        var nomefunc, salario, porcent, valorporcent, sal_atual;
         function reajustesal() {
             nomefunc = prompt("Qual é o nome do funcionário?");
-            salario = Number(prompt("Qual é o seu salário de Pedro Paulo?"));
-            porcent = Number(prompt("O salário de Pedro Paulo vai ser reajustado em qual porcenta"))
+            salario = Number(prompt("Qual é o seu salário de " + nomefunc + "?"));
+            porcent = prompt("O salário de " + nomefunc + " vai ser reajustado em qual porcentagem?");
+
+            valorporcent = (porcent / 100) * salario;
+            sal_atual = salario + valorporcent;
+
+            document.getElementById("mensagemtitle").innerHTML = `Pedro Paulo recebeu um aumento salarial!`;
+            document.getElementById("ganhoatual").innerHTML = `O salário atual era R$ ${salario}.`;
+            document.getElementById("aumentoporcent").innerHTML = `Com um aumento de ${porcent}%, o salário vai aumentar R$${valorporcent} no próximo mês.`;
+            document.getElementById("ganhoaposaumento").innerHTML = `E a partir daí, ${nomefunc} vai passar a ganhar R$ ${sal_atual}`;
         }
     </script>
 </body>

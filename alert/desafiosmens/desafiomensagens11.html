@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+
+    <button onclick="anobissexto()">Verificar</button>
+
+    <h3 id="mensagemtitle"></h3>
+    <p id="ano"></p>
+
+
+    <p>Informe um ano para saber se ele é bissexto.</p>
+
+    <script>
+        var ano;
+
+        function anobissexto() {
+            ano = Number(prompt("Qual é o ano você quer verificar?"));
+
+            document.getElementById("mensagemtitle").innerHTML = `Analisando o ano de ${ano}...`;
+
+            if (ano % 4 == 0) {
+                document.getElementById("ano").innerHTML = `O ano de ${ano} É BISSEXTO ✔`;
+            } else {
+                document.getElementById("ano").innerHTML = `O ano de ${ano} NÃO É BISSEXTO ✖`;
+            }
+        }
+    </script>
+</body>
+</html>
