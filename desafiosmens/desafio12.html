@@ -29,7 +29,8 @@
 
             if (preco_prod_ant < preco_atual) {
                 precovariavel = preco_atual - preco_prod_ant;
-                porcentvariavel = ((preco_atual - preco_prod_ant) / 100) * 100;
+                porcentvariavel = ((preco_prod_ant - preco_atual) / preco_prod_ant) * 100;
+                porcentvariavel = Math.abs(porcentvariavel.toFixed(2));
 
                 document.getElementById("msgaviso").innerHTML = `Hoje o produto está mais caro.`;
                 document.getElementById("precoatualvariavel").innerHTML = `O preço subiu R$ ${precovariavel},00 em relação ao preço anterior.`;
@@ -38,13 +39,12 @@
             } else if(preco_prod_ant == preco_atual) {
 
                 document.getElementById("msgaviso").innerHTML = `Não ocorreu nenhuma mudança no valor do produto.`;
-                document.getElementById("precoatualvariavel").innerHTML = `O preço continua igual em relação ao preço anterior.`;
-                document.getElementById("porcentvariavel").innerHTML = `A variação de porcentagem foi de: 0%.`;
-
+                
             } else {
                 precovariavel = preco_prod_ant - preco_atual;
-                porcentvariavel = ((preco_prod_ant - preco_atual) / 100) * 100;
-                
+                porcentvariavel = ((preco_prod_ant - preco_atual) / preco_prod_ant) * 100;
+                porcentvariavel = Math.abs(porcentvariavel.toFixed(2));
+
                 document.getElementById("msgaviso").innerHTML = `Hoje o produto está mais barato.`;
                 document.getElementById("precoatualvariavel").innerHTML = `O preço caiu R$ ${precovariavel},00 em relação ao preço anterior.`;
                 document.getElementById("porcentvariavel").innerHTML = `Uma variação de ${porcentvariavel}% pra baixo.`;

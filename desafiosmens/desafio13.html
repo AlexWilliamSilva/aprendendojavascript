@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+
+    <button onclick="notasDosAlunos()">Entrar com as notas</button>
+
+    <p>Clique no botão acima para informar as notas do aluno.</p>
+
+    <script>
+        var nome, i, nota = [], media, situacao;
+
+        function notasDosAlunos() {
+
+            nome = prompt("Digite o nome do Aluno: ");
+
+            for (let i = 0; i < 2; i++) {
+                nota = Number(prompt("Digite a " + (i + 1) + "° nota de " + nome + ":"));
+
+                media = nota[i] + nota[i];
+            }
+
+            alert(nota ,media);
+
+        }
+    </script>
+</body>
+</html>
