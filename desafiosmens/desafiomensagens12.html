@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio_mensagens</title>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+
+    <button onclick="precomudou()">Verificar</button>
+
+    <h3 id="mensagemtitle"></h3>
+    <p id="msgprecos"></p>
+    <p id="msgaviso"></p>
+    <p id="precoatualvariavel"></p>
+    <p id="porcentvariavel"></p>
+
+    <p>Clique no botão acima para analisar a mudança de preço.</p>
+
+    <script>
+        var preco_prod_ant, preco_atual, precovariavel, porcentvariavel;
+        function precomudou() {
+            preco_prod_ant = Number(prompt("Qual era o preço anterior do Produto?"));
+            preco_atual = Number(prompt("Qual é o preço atual do Produto?"));
+
+            document.getElementById("mensagemtitle").innerHTML = `Analisando os valores informados...`;
+            document.getElementById("msgprecos").innerHTML = `O produto custava R$ ${preco_prod_ant},00 e agora custa R$ ${preco_atual},00.`;
+
+            if (preco_prod_ant < preco_atual) {
+
+                precovariavel = preco_atual - preco_prod_ant;
+                porcentvariavel = 
+
+                document.getElementById("msgaviso").innerHTML = `Hoje o produto está mais caro.`;
+                document.getElementById("precoatualvariavel").innerHTML = `O preço subiu R$ ${precovariavel},00 em relação ao preço anterior.`;
+                document.getElementById("porcentvariavel").innerHTML = `Uma variação de ${porcentvariavel}% pra cima.`;
+
+            } else if(preco_prod_ant == preco_atual) {
+
+                document.getElementById("msgaviso").innerHTML = `Não ocorreu nenhuma mudança no valor do produto.`;
+                document.getElementById("precoatualvariavel").innerHTML = `O preço continua igual em relação ao preço anterior.`;
+                document.getElementById("porcentvariavel").innerHTML = `A variação de porcentagem foi de: 0%.`;
+
+            } else {
+                precovariavel = preco_prod_ant - preco_atual;
+                porcentvariavel = ((preco_prod_ant - preco_atual) / preco_prod_ant) * 100; 
+                
+                document.getElementById("msgaviso").innerHTML = `Hoje o produto está mais barato.`;
+                document.getElementById("precoatualvariavel").innerHTML = `O preço caiu R$ ${precovariavel},00 em relação ao preço anterior.`;
+                document.getElementById("porcentvariavel").innerHTML = `Uma variação de ${porcentvariavel}% pra baixo.`;
+            }
+        }
+    </script>
+</body>
+</html>
