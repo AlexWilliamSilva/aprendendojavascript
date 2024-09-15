@@ -10,22 +10,47 @@
 
     <button onclick="notasDosAlunos()">Entrar com as notas</button>
 
+    <h3 id="mensagemtitle"></h3>
+    <p id="notas"></p>
+    <p id="situacao"></p>
+
     <p>Clique no botão acima para informar as notas do aluno.</p>
 
     <script>
         var nome, i, nota = [], media, situacao;
+        var termo = "resultado";
+
+        var str = valor.replace(termo, "<span class='AlteraCor'>" + termo + "</span>")
+
+document.getElementById('result').innerHTML = str;
 
         function notasDosAlunos() {
 
             nome = prompt("Digite o nome do Aluno: ");
 
             for (let i = 0; i < 2; i++) {
-                nota = Number(prompt("Digite a " + (i + 1) + "° nota de " + nome + ":"));
-
-                media = nota[i] + nota[i];
+                nota[i] = Number(prompt("Digite a " + (i + 1) + "° nota de " + nome + ":"));
             }
 
-            alert(nota ,media);
+            media = (nota[0] + nota[1]) / 2;
+
+            document.getElementById("mensagemtitle").innerHTML = `Analisando a situação de ${nome}...`;
+
+            if(media > 6) {
+                situacao = "APROVADO";
+                document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
+                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está ${situacao}`;
+            } else 
+            if (media <= 3 && media <= 6) {
+                situacao = "RECUPERAÇÂO";
+                document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
+                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em ${situacao}`;
+            }
+            else {
+                situacao = "REPROVADO";
+                document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
+                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está ${situacao}`;
+            }
 
         }
     </script>
