@@ -38,15 +38,15 @@
 
             if(media > 6) {
                 document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está APROVADO`;
+                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está <p style="background-color: #00FF00; color: #008000; width: max-content;">APROVADO</p>`;
             } else 
             if (media >= 3 && media <= 6) {
                 document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em RECUPERAÇÂO`;
+                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em <p style="color: #DAA520; width: max-content;">RECUPERAÇÂO</p>`;
             }
             else {
                 document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está REPROVADO`;
+                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está <p style="background-color: #FF0000; color: #FF6347 ; width: max-content;">REPROVADO</p>`;
             }
            
         }
