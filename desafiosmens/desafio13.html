@@ -22,7 +22,7 @@
     <p>Clique no botão acima para informar as notas do aluno.</p>
 
     <script>
-        var nome, i, nota = [], media, situacao;
+        var nome, i, nota = [], media;
 
         function notasDosAlunos() {
 
@@ -37,21 +37,18 @@
             document.getElementById("mensagemtitle").innerHTML = `Analisando a situação de ${nome}...`;
 
             if(media > 6) {
-                situacao = "APROVADO";
                 document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está ${situacao}`;
+                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está APROVADO`;
             } else 
-            if (media <= 3 && media <= 6) {
-                situacao = "RECUPERAÇÂO";
+            if (media >= 3 && media <= 6) {
                 document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em ${situacao}`;
+                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em RECUPERAÇÂO`;
             }
             else {
-                situacao = "REPROVADO";
                 document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está ${situacao}`;
+                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está REPROVADO`;
             }
-
+           
         }
     </script>
 </body>
