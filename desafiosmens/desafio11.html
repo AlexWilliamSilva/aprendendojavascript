@@ -30,9 +30,9 @@
             document.getElementById("mensagemtitle").innerHTML = `Analisando o ano de ${ano}...`;
 
             if (ano % 4 == 0) {
-                document.getElementById("ano").innerHTML = `O ano de ${ano} É BISSEXTO ✔`;
+                document.getElementById("ano").innerHTML = `O ano de ${ano} <span style="background-color: #00FF7F; width: max-content;">É BISSEXTO ✔</span>`;
             } else {
-                document.getElementById("ano").innerHTML = `O ano de ${ano} NÃO É BISSEXTO ✖`;
+                document.getElementById("ano").innerHTML = `O ano de ${ano} <span style="background-color: #FF6347; width: max-content;">NÃO É BISSEXTO ✖</span>`;
             }
         }
     </script>
