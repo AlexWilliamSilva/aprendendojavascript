@@ -12,7 +12,7 @@ img {
     width: 300px;
 }
 
-#bellow-cover {
+#below-cover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

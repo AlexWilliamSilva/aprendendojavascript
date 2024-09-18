@@ -8,6 +8,24 @@
         button {
             padding: 15px;
         }
+
+        .aprovado {
+            background-color: #00FF00; 
+            color: #008000; 
+            width: max-content;
+        }
+
+        .recuperacao {
+            color: #DAA520; 
+            width: max-content;
+        }
+
+        .reprovado {
+            background-color: #FF0000; 
+            color: #582016 ; 
+            width: max-content;
+        }
+
     </style>
 </head>
 <body>
@@ -35,18 +53,16 @@
             media = (nota[0] + nota[1]) / 2;
 
             document.getElementById("mensagemtitle").innerHTML = `Analisando a situação de ${nome}...`;
+            document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
 
             if(media > 6) {
-                document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está <span style="background-color: #00FF00; color: #008000; width: max-content;">APROVADO</span>`;
+                document.getElementById("situacao").innerHTML = `Com média acima de 6,0, o aluno está <span class = "aprovado">APROVADO</span>`;
             } else 
             if (media >= 3 && media <= 6) {
-                document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em <span style="color: #DAA520; width: max-content;">RECUPERAÇÂO</span>`;
+                document.getElementById("situacao").innerHTML = `Com média entre 3,0 e 6,0, o aluno está em <span class = "recuperacao">RECUPERAÇÂO</span>`;
             }
             else {
-                document.getElementById("notas").innerHTML = `Com as notas ${nota[0]} e ${nota[1]}, a <strong>média é ${media}</strong>`;
-                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está <span style="background-color: #FF0000; color: #FF6347 ; width: max-content;">REPROVADO</span>`;
+                document.getElementById("situacao").innerHTML = `Com média abaixo de 3,0, o aluno está <span class = "reprovado">REPROVADO</span>`;
             }
            
         }
