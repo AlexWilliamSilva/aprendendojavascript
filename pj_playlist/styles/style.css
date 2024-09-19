@@ -8,10 +8,6 @@ body {
     align-items: center;
 }
 
-#cover {
-    width: 450px;
-}
-
 #below-cover {
     display: flex;
     flex-direction: row;
@@ -39,6 +35,10 @@ body {
     font-size: 4em;
 }
 
+#cover {
+    width: 450px;
+}
+
 #playlist-title {
     display: flex;
     flex-direction: row;
@@ -55,8 +55,10 @@ body {
     color: rgb(120, 132, 134);
 }
 
+/* Barra de progresso */
+
 #progress-bar {
-    background-color:rgb(120, 132, 134);
+    background-color: rgb(120, 132, 134);
     height: 3px;
     width: 100%;
     border-radius: 15px;
@@ -64,11 +66,13 @@ body {
 }
 
 #current-progress {
+    --progress: 0%;
     background-color: white;
     height: inherit;
-    width: 50%;
+    width: var(--progress);
     border-radius: inherit;
 }
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 button {
     background-color: inherit;
