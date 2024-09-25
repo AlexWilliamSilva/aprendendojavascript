@@ -28,19 +28,53 @@ const Sharks = {
     artist: "Imagine Dragons",
     liked: false,
 };
+const eyesClosed = {
+    songName: "Eyes Closed",
+    file: "eyes_closed_imagine_dragons",
+    artist: "Imagine Dragons",
+    liked: false,
+};
+
+const aBanda = {
+    songName: "A Banda",
+    file: "A_banda_chico_buarque",
+    artist: "Chico Buarque",
+    liked: false,
+};
+
+const Contrucao = {
+    songName: "Construção",
+    file: "Construcao_chico_buarque",
+    artist: "Chico Buarque",
+    liked: false,
+};
+
+const Valsinha = {
+    songName: "Valsinha",
+    file: "Valsinha_chico_buarque",
+    artist: "Chico Buarque",
+    liked: false,
+};
+
+const RapdoMinecraftTauz = {
+    songName: "Rap do Minecraft",
+    file: "rap_minecraft_tauz",
+    artist: "Tauz",
+    liked: false,
+};
 
 let isPlaying = false;
 let isShuffled = false; // informa se a playlist está embaralhada
 let repeatOn = false; // impede q a musica ja comece tocando
 
 try {
-    originalplaylist = JSON.parse(localStorage.getItem('playlist')) ?? [Enemy, Sharks];
+    originalplaylist = JSON.parse(localStorage.getItem('playlist')) ?? [Enemy, Sharks, eyesClosed, aBanda, Contrucao, Valsinha, RapdoMinecraftTauz]; // ?? representa o operador de coalescência nula
 } catch (error) {
     console.error("Erro ao carregar playlist do localStorage:", error);
-    originalplaylist = [Enemy, Sharks]; // Fallback para a lista padrão
+    originalplaylist = [Enemy, Sharks, eyesClosed, aBanda, Contrucao, Valsinha, RapdoMinecraftTauz]; // Fallback para a lista padrão
 }
 
-//const originalplaylist = JSON.parse(localStorage.getItem('playlist')) ?? [Enemy, Sharks]; // vetor que armazena as musicas // ?? representa o operador de coalecência nula
+//const originalplaylist = JSON.parse(localStorage.getItem('playlist')) ?? [Enemy, Sharks]; // vetor que armazena as musicas // ?? representa o operador de coalescência nula
 //const originalplaylist = [Enemy, Sharks];
 let sortedPlaylist = [...originalplaylist]; // copia do original que vai ser usado para a ordem aleatoria
 let index = 0;
@@ -222,4 +256,4 @@ song.addEventListener("ended", nextOrRepeat); // evento para pssar para a proxim
 progressContainer.addEventListener("click", jumpTo); // evento para a ação de pular em trechos da musica
 shuffleButton.addEventListener("click", shuffleButtonClicked); // evento para o play das musicas em ordem aleatoria
 repeatButton.addEventListener("click", repeatButtonClicked); // evento para quando o botão de repetir for clicado
-likeButton.addEventListener('click', likeButtonClicked);
+likeButton.addEventListener('click', likeButtonClicked); // evento para quando o botão de like for clicado
