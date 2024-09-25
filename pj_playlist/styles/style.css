@@ -8,6 +8,7 @@ body {
     align-items: center;
 }
 
+/* Organizando o layout de botoes do play de musica */
 #below-cover {
     display: flex;
     flex-direction: row;
@@ -25,6 +26,7 @@ body {
 
 .button {
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .button-navigate {
@@ -35,10 +37,12 @@ body {
     font-size: 4em;
 }
 
+/* Tamanho da imagem em largura */
 #cover {
     width: 450px;
 }
 
+/* Titulo da Playlist */
 #playlist-title {
     display: flex;
     flex-direction: row;
@@ -62,16 +66,20 @@ body {
     height: 3px;
     width: 100%;
     border-radius: 15px;
-    margin-bottom: 1em;
 }
 
 #current-progress {
     --progress: 0%;
     background-color: white;
     height: inherit;
-    width: var(--progress);
+    width: var(--progress); /* Variavel do proprio css */
     border-radius: inherit;
 }
+
+#progress-container {
+    cursor: pointer;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 button {
@@ -79,3 +87,15 @@ button {
     color: inherit;
     border: none;
 }
+
+.button-active {
+    color: rgb(7, 160, 53);
+}
+
+#time-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: smaller;
+    margin-top: 0.5em;
+  }
