@@ -1,0 +1,31 @@
+.calculadoraimc {
+    background-color: #FFFF00;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* box-shadow: black; */
+    width: 600px;
+    height: 500px;
+    margin-right: 50%;
+    margin-left: 33%;
+    margin-top: 100px;
+}
+
+.formcalc {
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+#botao_calcular {
+    background-color: black;
+    color: #fff;
+    margin-right: 50%;
+}
+
+#result {
+    margin-left: -60px;
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 40px;
+    overflow: hidden;
+}
