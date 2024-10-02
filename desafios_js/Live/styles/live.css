@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+video {
+    width: 100dvw;
+    height: 100dvh;
+    object-fit: cover; /*video preenchido*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+h1 {
+    font-size: 48px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 20px;
+    color: #fff;
+}
+
+#titles {
+    margin-top: 100px;
+    margin-left: 900px;
+}
