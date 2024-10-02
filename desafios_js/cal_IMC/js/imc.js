@@ -3,6 +3,13 @@ const altura = document.getElementById("altura");
 const peso = document.getElementById("peso");
 const result = document.getElementById("result");
 
+function validarValor(input) {
+    if (input.value < 0) {
+        input.value = '';
+        alert("Este valor não pode ser negativo.");
+    }
+}
+
 function calculoIMC(event) {
     event.preventDefault();
 
