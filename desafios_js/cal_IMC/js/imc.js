@@ -8,6 +8,13 @@ function validarValor(input) {
         input.value = '';
         alert("Este valor não pode ser negativo.");
     }
+    const valor = input.value.replace(/\D/g, ''); // Remove qualquer caractere não numérico
+    if (valor) {
+        const numero = parseInt(valor, 10);
+        input.value = (numero / 100).toFixed(2); // Formata para metros com 2 casas decimais
+    } else {
+        input.value = '';
+    }
 }
 
 function calculoIMC(event) {
